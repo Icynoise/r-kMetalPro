@@ -4,6 +4,8 @@
       <img [src]="logo" alt="R & K Metal Pro" width="140" height="32" />
     </a>
 
+    <div class="navbar__backdrop" [class.is-visible]="isMenuOpen()" (click)="closeMenu()"></div>
+
     <nav class="navbar__links" [class.navbar__links--open]="isMenuOpen()">
       <a href="#about" (click)="closeMenu()">{{ text().nav.about }}</a>
       <a href="#projects" (click)="closeMenu()">{{ text().nav.projects }}</a>
