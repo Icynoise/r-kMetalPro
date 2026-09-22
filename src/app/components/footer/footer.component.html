@@ -7,8 +7,8 @@
 
     <div class="footer__col">
       <h4>{{ text().footer.contactHeading }}</h4>
-      @for (phone of contactInfo.phones; track phone) {
-        <a [href]="'tel:' + phone">{{ phone }}</a>
+      @for (phone of contactInfo.phones; track phone.number) {
+        <a [href]="'tel:' + phone.number">{{ phone.number }} <span class="footer__phone-country">({{ phone.country | localize }})</span></a>
       }
       <a [href]="'mailto:' + contactInfo.email">{{ contactInfo.email }}</a>
     </div>

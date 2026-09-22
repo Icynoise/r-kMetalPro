@@ -6,10 +6,13 @@
       <p class="section-sub">{{ text().contact.subheading }}</p>
 
       <div class="contact__details">
-        @for (phone of contactInfo.phones; track phone) {
-          <a class="contact__detail" [href]="'tel:' + phone">
+        @for (phone of contactInfo.phones; track phone.number) {
+          <a class="contact__detail" [href]="'tel:' + phone.number">
             <app-icon name="phone" class="contact__detail-icon" />
-            {{ phone }}
+            <span>
+              {{ phone.number }}
+              <span class="contact__detail-country">{{ phone.country | localize }}</span>
+            </span>
           </a>
         }
         <a class="contact__detail" [href]="'mailto:' + contactInfo.email">

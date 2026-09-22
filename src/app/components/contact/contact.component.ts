@@ -4,13 +4,14 @@ import { TranslationService } from '../../core/services/translation.service';
 import { CONTACT_INFO } from '../../core/data/contact-info.data';
 import { RevealDirective } from '../../shared/reveal.directive';
 import { IconComponent } from '../../shared/icon.component';
+import { LocalizePipe } from '../../core/pipes/localize.pipe';
 
 type SubmitState = 'idle' | 'sending' | 'success' | 'error';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, RevealDirective, IconComponent],
+  imports: [ReactiveFormsModule, RevealDirective, IconComponent, LocalizePipe],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
