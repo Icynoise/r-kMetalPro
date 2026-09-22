@@ -5,7 +5,7 @@ import { CONTACT_INFO } from '../../core/data/contact-info.data';
 import { RevealDirective } from '../../shared/reveal.directive';
 import { IconComponent } from '../../shared/icon.component';
 
-type SubmitState = 'idle' | 'success' | 'error';
+type SubmitState = 'idle' | 'sending' | 'success' | 'error';
 
 @Component({
   selector: 'app-contact',
@@ -34,7 +34,7 @@ export class ContactComponent {
     return this.form.controls;
   }
 
-  submit(): void {
+  async submit(): Promise<void> {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       this.submitState.set('error');
@@ -44,6 +44,36 @@ export class ContactComponent {
     const value = this.form.getRawValue();
     const inquiryLabel = this.text().contact.inquiryOptions[value.inquiryType] ?? '';
 
+    this.submitState.set('sending');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: value.name,
+          email: value.email,
+          phone: value.phone,
+          inquiryType: inquiryLabel,
+          message: value.message
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('request_failed');
+      }
+
+      this.submitState.set('success');
+      this.form.reset({ name: '', email: '', phone: '', inquiryType: 0, message: '' });
+    } catch {
+      this.sendViaMailto(value, inquiryLabel);
+    }
+  }
+
+  private sendViaMailto(
+    value: { name: string; email: string; phone: string; inquiryType: number; message: string },
+    inquiryLabel: string
+  ): void {
     const subject = encodeURIComponent(`${inquiryLabel} — ${value.name}`);
     const body = encodeURIComponent(
       `${this.text().contact.nameLabel}: ${value.name}\n` +

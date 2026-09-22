@@ -62,7 +62,11 @@
         }
       </div>
 
-      <button type="submit" class="btn btn--primary contact__submit">{{ text().contact.submit }}</button>
+      <button
+        type="submit"
+        class="btn btn--primary contact__submit"
+        [disabled]="submitState() === 'sending'"
+      >{{ submitState() === 'sending' ? text().contact.sending : text().contact.submit }}</button>
 
       @if (submitState() === 'success') {
         <div class="contact__notice contact__notice--success">

@@ -52,6 +52,7 @@ export interface UiText {
     inquiryOptions: string[];
     messageLabel: string;
     submit: string;
+    sending: string;
     successTitle: string;
     successBody: string;
     errorBody: string;
@@ -133,6 +134,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       inquiryOptions: ['Allgemeine Anfrage', 'Projektvorschlag', 'Angebotsanfrage', 'Planung, Montage, Service', 'Sonstiges'],
       messageLabel: 'Nachricht',
       submit: 'Nachricht senden',
+      sending: 'Wird gesendet…',
       successTitle: 'Ihre Nachricht wurde gesendet',
       successBody: 'Sie erhalten innerhalb von 24 Stunden eine Antwort. Bleiben Sie gespannt auf Neuigkeiten!',
       errorBody: 'Ups, etwas ist schiefgelaufen! Versuche es noch einmal.',
@@ -212,6 +214,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       inquiryOptions: ['General Inquiry', 'Project proposal', 'Request for Quotation', 'Design, Assembly, Service', 'Other'],
       messageLabel: 'Message',
       submit: 'Send message',
+      sending: 'Sending…',
       successTitle: 'Your Message Has Been Sent',
       successBody: 'You can expect a response within 24 hours. Stay tuned for some news!',
       errorBody: 'Oops, something went wrong! Try again.',
@@ -291,6 +294,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       inquiryOptions: ['Opšti upit', 'Ponuda za projekat', 'Zahtjev za ponudu', 'Projektovanje, Montaža, Servis', 'Ostalo'],
       messageLabel: 'Poruka',
       submit: 'Pošalji poruku',
+      sending: 'Šalje se…',
       successTitle: 'Vaša poruka je poslata',
       successBody: 'Očekujte odgovor u roku od 24 sata. Pratite nas!',
       errorBody: 'Ups, nešto je pošlo naopako! Pokušajte ponovo.',
