@@ -70,11 +70,12 @@
   position: absolute;
   top: 14px;
   right: 14px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   color: #fff;
   font-size: 12px;
   font-weight: 600;
-  padding: 4px 10px;
+  white-space: nowrap;
+  padding: 5px 12px;
   border-radius: 100px;
 }
 

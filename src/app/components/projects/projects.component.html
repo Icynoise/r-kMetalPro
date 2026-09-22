@@ -23,7 +23,7 @@
           <div class="project-card__media">
             <img [src]="project.images[0].src" [alt]="project.images[0].alt | localize" loading="lazy" />
             @if (project.images.length > 1) {
-              <span class="project-card__count">+{{ project.images.length - 1 }}</span>
+              <span class="project-card__count">{{ text().projects.moreImages }} +{{ project.images.length - 1 }}</span>
             }
             <div class="project-card__overlay">
               <span class="btn btn--primary">{{ text().projects.viewGallery }}</span>

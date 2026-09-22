@@ -33,6 +33,7 @@ export interface UiText {
     subheading: string;
     location: string;
     viewGallery: string;
+    moreImages: string;
     filters: { key: ProjectFilterKey; label: string }[];
   };
   services: {
@@ -105,6 +106,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       subheading: 'Entdecken Sie unsere realisierten Projekte und sehen Sie, wie unsere Metalllösungen jeden Raum verbessern.',
       location: 'Standort',
       viewGallery: 'Galerie ansehen',
+      moreImages: 'Weitere',
       filters: [
         { key: 'all', label: 'Alle' },
         { key: 'glass', label: 'Glasgeländer' },
@@ -183,6 +185,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       subheading: 'Explore our completed projects and see how our metal solutions enhance every space.',
       location: 'Location',
       viewGallery: 'View gallery',
+      moreImages: 'More photos',
       filters: [
         { key: 'all', label: 'All' },
         { key: 'glass', label: 'Glass railings' },
@@ -261,6 +264,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       subheading: 'Pogledajte naše realizovane projekte i kako naša metalna rješenja unapređuju svaki prostor.',
       location: 'Lokacija',
       viewGallery: 'Pogledaj galeriju',
+      moreImages: 'Vidi još',
       filters: [
         { key: 'all', label: 'Sve' },
         { key: 'glass', label: 'Staklene ograde' },
