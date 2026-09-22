@@ -48,16 +48,8 @@
 
   .hero__media img {
     object-position: 62% center;
-    animation-name: hero-ken-burns-mobile;
-  }
-
-  @keyframes hero-ken-burns-mobile {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.04);
-    }
+    animation: none;
+    transform: none;
   }
 }
 
