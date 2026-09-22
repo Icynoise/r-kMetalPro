@@ -1,6 +1,7 @@
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -41,6 +42,7 @@
 @media (max-width: 700px) {
   .hero__media {
     height: 100vh;
+    height: 100dvh;
     bottom: auto;
   }
 
