@@ -136,7 +136,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       submit: 'Nachricht senden',
       sending: 'Wird gesendet…',
       successTitle: 'Ihre Nachricht wurde gesendet',
-      successBody: 'Sie erhalten innerhalb von 24 Stunden eine Antwort. Bleiben Sie gespannt auf Neuigkeiten!',
+      successBody: 'Unser Team meldet sich bei Ihnen, nachdem wir Ihre Anfrage bearbeitet haben.',
       errorBody: 'Ups, etwas ist schiefgelaufen! Versuche es noch einmal.',
       requiredError: 'Dieses Feld ist erforderlich.',
       emailError: 'Bitte geben Sie eine gültige Email-Adresse ein.'
@@ -216,7 +216,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       submit: 'Send message',
       sending: 'Sending…',
       successTitle: 'Your Message Has Been Sent',
-      successBody: 'You can expect a response within 24 hours. Stay tuned for some news!',
+      successBody: 'Our team will get back to you after reviewing your inquiry.',
       errorBody: 'Oops, something went wrong! Try again.',
       requiredError: 'This field is required.',
       emailError: 'Please enter a valid email address.'
@@ -296,7 +296,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       submit: 'Pošalji poruku',
       sending: 'Šalje se…',
       successTitle: 'Vaša poruka je poslata',
-      successBody: 'Očekujte odgovor u roku od 24 sata. Pratite nas!',
+      successBody: 'Naš tim će vam se javiti nakon obrade vašeg upita.',
       errorBody: 'Ups, nešto je pošlo naopako! Pokušajte ponovo.',
       requiredError: 'Ovo polje je obavezno.',
       emailError: 'Unesite ispravnu email adresu.'
