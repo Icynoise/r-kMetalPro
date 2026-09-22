@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "r-kmetalpro",
+  "main": "worker/index.js",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./dist/rk-metalpro-redesign/browser",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  }
+}

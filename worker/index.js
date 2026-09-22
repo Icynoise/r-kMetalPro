@@ -9,9 +9,7 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;');
 }
 
-export async function onRequestPost(context) {
-  const { request, env } = context;
-
+async function handleContact(request, env) {
   let body;
   try {
     body = await request.json();
@@ -75,3 +73,15 @@ export async function onRequestPost(context) {
 
   return Response.json({ ok: true });
 }
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+
+    if (url.pathname === '/api/contact' && request.method === 'POST') {
+      return handleContact(request, env);
+    }
+
+    return env.ASSETS.fetch(request);
+  }
+};
