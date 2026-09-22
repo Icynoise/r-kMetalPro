@@ -11,19 +11,8 @@
       <p class="hero__sub">{{ text().hero.subheading }}</p>
 
       <div class="hero__stats">
-        @for (stat of text().hero.stats; track stat.label; let i = $index) {
+        @for (stat of text().hero.stats; track stat.label) {
           <div class="hero__stat">
-            @switch (i) {
-              @case (0) {
-                <span class="hero__stat-badge hero__stat-badge--text">EST.</span>
-              }
-              @case (1) {
-                <app-icon name="check-badge" class="hero__stat-badge" />
-              }
-              @case (2) {
-                <app-icon name="globe" class="hero__stat-badge" />
-              }
-            }
             <span class="hero__stat-value">{{ stat.value }}</span>
             <span class="hero__stat-label">{{ stat.label }}</span>
           </div>

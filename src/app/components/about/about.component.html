@@ -17,16 +17,8 @@
       }
 
       <div class="about__stats">
-        @for (stat of text().hero.stats.slice(1); track stat.label; let i = $index) {
+        @for (stat of text().hero.stats.slice(1); track stat.label) {
           <div class="about__stat">
-            @switch (i) {
-              @case (0) {
-                <app-icon name="check-badge" class="about__stat-badge" />
-              }
-              @case (1) {
-                <app-icon name="globe" class="about__stat-badge" />
-              }
-            }
             <span class="about__stat-value">{{ stat.value }}</span>
             <span class="about__stat-label">{{ stat.label }}</span>
           </div>

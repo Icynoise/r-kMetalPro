@@ -1,12 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { TranslationService } from '../../core/services/translation.service';
 import { RevealDirective } from '../../shared/reveal.directive';
-import { IconComponent } from '../../shared/icon.component';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [RevealDirective, IconComponent],
+  imports: [RevealDirective],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })

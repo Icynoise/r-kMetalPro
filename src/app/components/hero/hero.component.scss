@@ -118,31 +118,12 @@
   min-width: 120px;
 }
 
-.hero__stat-badge {
-  color: #ffffff;
-  opacity: 0.9;
-  margin-bottom: 2px;
-}
-
-.hero__stat-badge svg {
-  width: 22px;
-  height: 22px;
-}
-
-.hero__stat-badge--text {
-  font-family: var(--font-heading);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--color-accent-strong);
-  opacity: 1;
-}
-
 .hero__stat-value {
   font-family: var(--font-heading);
   font-size: 28px;
   font-weight: 700;
   color: #ffffff;
+  line-height: 1;
 }
 
 .hero__stat-label {
