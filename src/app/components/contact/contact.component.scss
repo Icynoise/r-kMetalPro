@@ -1,0 +1,132 @@
+.contact__grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 64px;
+}
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.contact__detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact__detail:hover {
+  color: var(--color-accent);
+}
+
+.contact__detail-icon {
+  font-size: 18px;
+}
+
+.contact__form {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  transition: border-color 0.2s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.field input.is-invalid,
+.field textarea.is-invalid {
+  border-color: #d9695a;
+}
+
+.field__error {
+  font-size: 12.5px;
+  color: #e08476;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact__submit {
+  margin-top: 4px;
+  align-self: flex-start;
+}
+
+.contact__notice {
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 13.5px;
+}
+
+.contact__notice--success {
+  background: rgba(90, 178, 120, 0.12);
+  border: 1px solid rgba(90, 178, 120, 0.35);
+  color: #8fd6a8;
+}
+
+.contact__notice--success p {
+  margin-top: 4px;
+  color: rgba(143, 214, 168, 0.85);
+}
+
+.contact__notice--error {
+  background: rgba(217, 105, 90, 0.12);
+  border: 1px solid rgba(217, 105, 90, 0.35);
+  color: #e6a99c;
+}
+
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact__row {
+    grid-template-columns: 1fr;
+  }
+}

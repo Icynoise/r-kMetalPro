@@ -1,0 +1,57 @@
+<section id="projects" class="section projects">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <div class="eyebrow">{{ text().projects.eyebrow }}</div>
+      <h2 class="h2">{{ text().projects.heading }}</h2>
+      <p class="section-sub">{{ text().projects.subheading }}</p>
+    </div>
+
+    <div class="projects__filters" appReveal="0.1s">
+      @for (filter of text().projects.filters; track filter.key) {
+        <button
+          type="button"
+          class="projects__filter"
+          [class.is-active]="activeFilter() === filter.key"
+          (click)="setFilter(filter.key)"
+        >{{ filter.label }}</button>
+      }
+    </div>
+
+    <div class="projects__grid">
+      @for (project of filteredProjects(); track project.slug; let i = $index) {
+        <article class="project-card" [appReveal]="(i % 3) * 0.08 + 's'" (click)="openProject(project)">
+          <div class="project-card__media">
+            <img [src]="project.images[0].src" [alt]="project.images[0].alt | localize" loading="lazy" />
+            @if (project.images.length > 1) {
+              <span class="project-card__count">+{{ project.images.length - 1 }}</span>
+            }
+            <div class="project-card__overlay">
+              <span class="btn btn--primary">{{ text().projects.viewGallery }}</span>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <h3>{{ project.title | localize }}</h3>
+            <p>{{ project.description | localize }}</p>
+            <div class="project-card__meta">
+              <span class="project-card__location"><app-icon name="pin" class="project-card__location-icon" /> {{ project.location | localize }}</span>
+            </div>
+            <div class="project-card__tags">
+              @for (tag of project.tags | localizeList; track tag) {
+                <span class="tag-pill">{{ tag }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+@if (activeProject(); as project) {
+  <app-lightbox
+    [project]="project"
+    [index]="activeImageIndex()"
+    (close)="closeLightbox()"
+    (indexChange)="setImageIndex($event)"
+  />
+}

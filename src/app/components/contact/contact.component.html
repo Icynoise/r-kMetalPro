@@ -1,0 +1,81 @@
+<section id="contact" class="section contact">
+  <div class="container contact__grid">
+    <div class="contact__intro" appReveal>
+      <div class="eyebrow">{{ text().contact.eyebrow }}</div>
+      <h2 class="h2">{{ text().contact.heading }}</h2>
+      <p class="section-sub">{{ text().contact.subheading }}</p>
+
+      <div class="contact__details">
+        @for (phone of contactInfo.phones; track phone) {
+          <a class="contact__detail" [href]="'tel:' + phone">
+            <app-icon name="phone" class="contact__detail-icon" />
+            {{ phone }}
+          </a>
+        }
+        <a class="contact__detail" [href]="'mailto:' + contactInfo.email">
+          <app-icon name="mail" class="contact__detail-icon" />
+          {{ contactInfo.email }}
+        </a>
+      </div>
+    </div>
+
+    <form class="contact__form" [formGroup]="form" (ngSubmit)="submit()" appReveal="0.1s" novalidate>
+      <div class="contact__row">
+        <div class="field">
+          <label for="name">{{ text().contact.nameLabel }}</label>
+          <input id="name" type="text" formControlName="name" [class.is-invalid]="f.name.invalid && f.name.touched" />
+          @if (f.name.invalid && f.name.touched) {
+            <span class="field__error">{{ text().contact.requiredError }}</span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="email">{{ text().contact.emailLabel }}</label>
+          <input id="email" type="email" formControlName="email" [class.is-invalid]="f.email.invalid && f.email.touched" />
+          @if (f.email.invalid && f.email.touched) {
+            <span class="field__error">{{ text().contact.emailError }}</span>
+          }
+        </div>
+      </div>
+
+      <div class="contact__row">
+        <div class="field">
+          <label for="phone">{{ text().contact.phoneLabel }}</label>
+          <input id="phone" type="tel" formControlName="phone" />
+        </div>
+
+        <div class="field">
+          <label for="inquiryType">{{ text().contact.inquiryLabel }}</label>
+          <select id="inquiryType" formControlName="inquiryType">
+            @for (option of text().contact.inquiryOptions; track option; let i = $index) {
+              <option [value]="i">{{ option }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">{{ text().contact.messageLabel }}</label>
+        <textarea id="message" rows="5" formControlName="message" [class.is-invalid]="f.message.invalid && f.message.touched"></textarea>
+        @if (f.message.invalid && f.message.touched) {
+          <span class="field__error">{{ text().contact.requiredError }}</span>
+        }
+      </div>
+
+      <button type="submit" class="btn btn--primary contact__submit">{{ text().contact.submit }}</button>
+
+      @if (submitState() === 'success') {
+        <div class="contact__notice contact__notice--success">
+          <strong>{{ text().contact.successTitle }}</strong>
+          <p>{{ text().contact.successBody }}</p>
+        </div>
+      }
+
+      @if (submitState() === 'error' && form.invalid) {
+        <div class="contact__notice contact__notice--error">
+          <p>{{ text().contact.errorBody }}</p>
+        </div>
+      }
+    </form>
+  </div>
+</section>

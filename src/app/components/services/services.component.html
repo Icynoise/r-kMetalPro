@@ -1,0 +1,40 @@
+<section id="services" class="section section--light services">
+  <div class="container">
+    <div class="section-head section-head--center" appReveal>
+      <div class="eyebrow">{{ text().services.eyebrow }}</div>
+      <h2 class="h2">{{ text().services.heading }}</h2>
+      <p class="section-sub" style="margin-left: auto; margin-right: auto;">{{ text().services.subheading }}</p>
+    </div>
+
+    <div class="services__grid">
+      @for (service of services; track service.name.de; let i = $index) {
+        <div class="service-card" [appReveal]="(i % 3) * 0.08 + 's'">
+          <div class="service-card__icon">
+            @switch (service.icon) {
+              @case ('balcony') {
+                <svg viewBox="0 0 48 48" fill="none"><path d="M6 40h36M10 40V16M38 40V16M10 16h28M14 20v16M20 20v16M26 20v16M32 20v16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+              }
+              @case ('cnc') {
+                <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="3" stroke="currentColor" stroke-width="2.4"/><path d="M16 24h16M24 16v16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="24" cy="24" r="4" stroke="currentColor" stroke-width="2.4"/></svg>
+              }
+              @case ('glass') {
+                <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="8" width="28" height="32" rx="2" stroke="currentColor" stroke-width="2.4"/><path d="M10 24h28" stroke="currentColor" stroke-width="2.4"/></svg>
+              }
+              @case ('spider') {
+                <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="4" stroke="currentColor" stroke-width="2.4"/><path d="M24 20V8M24 28v12M20 24H8M28 24h12M13 13l7.5 7.5M35 13l-7.5 7.5M13 35l7.5-7.5M35 35l-7.5-7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+              }
+              @case ('fence') {
+                <svg viewBox="0 0 48 48" fill="none"><path d="M10 40V12l4-6 4 6v28M22 40V12l4-6 4 6v28M34 40V12l4-6 4 6v28M6 22h10M20 22h10M34 22h10M6 30h10M20 30h10M34 30h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+              }
+              @case ('stairs') {
+                <svg viewBox="0 0 48 48" fill="none"><path d="M8 40h8v-8h8v-8h8v-8h8v-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 40V16h8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+              }
+            }
+          </div>
+          <h3>{{ service.name | localize }}</h3>
+          <p>{{ service.description | localize }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

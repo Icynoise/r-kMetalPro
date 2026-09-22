@@ -1,0 +1,57 @@
+<div class="lightbox" (click)="onBackdropClick($event)">
+  <div class="lightbox__panel">
+    <button type="button" class="lightbox__close" (click)="close.emit()" aria-label="Close">✕</button>
+
+    <div
+      class="lightbox__stage"
+      (touchstart)="onTouchStart($event)"
+      (touchend)="onTouchEnd($event)"
+    >
+      <button
+        type="button"
+        class="lightbox__nav lightbox__nav--prev"
+        (click)="prev()"
+        aria-label="Previous image"
+        [class.is-hidden]="project().images.length < 2"
+      >‹</button>
+
+      <img [src]="activeImage().src" [alt]="activeImage().alt | localize" />
+
+      <button
+        type="button"
+        class="lightbox__nav lightbox__nav--next"
+        (click)="next()"
+        aria-label="Next image"
+        [class.is-hidden]="project().images.length < 2"
+      >›</button>
+    </div>
+
+    <div class="lightbox__info">
+      <div class="lightbox__info-text">
+        <h3>{{ project().title | localize }}</h3>
+        <p>{{ project().description | localize }}</p>
+        <div class="lightbox__meta">
+          <span class="lightbox__location"><app-icon name="pin" /> {{ project().location | localize }}</span>
+          @for (tag of project().tags | localizeList; track tag) {
+            <span class="tag-pill">{{ tag }}</span>
+          }
+        </div>
+      </div>
+
+      @if (project().images.length > 1) {
+        <div class="lightbox__thumbs">
+          @for (img of project().images; track img.src; let i = $index) {
+            <button
+              type="button"
+              class="lightbox__thumb"
+              [class.is-active]="i === index()"
+              (click)="select(i)"
+            >
+              <img [src]="img.src" [alt]="img.alt | localize" />
+            </button>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</div>

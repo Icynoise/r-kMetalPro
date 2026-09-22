@@ -1,0 +1,49 @@
+<section id="home" class="hero">
+  <div class="hero__media">
+    <img [src]="heroImage" alt="" />
+    <div class="hero__scrim"></div>
+  </div>
+
+  <div class="container hero__inner">
+    <div class="hero__copy" appReveal>
+      <div class="eyebrow eyebrow--light">{{ text().hero.eyebrow }}</div>
+      <h1 class="hero__heading">{{ text().hero.heading }}</h1>
+      <p class="hero__sub">{{ text().hero.subheading }}</p>
+
+      <div class="hero__stats">
+        @for (stat of text().hero.stats; track stat.label) {
+          <div class="hero__stat">
+            <span class="hero__stat-value">{{ stat.value }}</span>
+            <span class="hero__stat-label">{{ stat.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="hero__cards" appReveal="0.15s">
+      <a href="#projects" class="hero__card">
+        <div class="hero__card-heading">
+          <span class="hero__card-index">01</span>
+          <span>{{ text().hero.ctaProjects }}</span>
+        </div>
+        <p>{{ text().hero.ctaProjectsSub }}</p>
+      </a>
+
+      <a href="#services" class="hero__card">
+        <div class="hero__card-heading">
+          <span class="hero__card-index">02</span>
+          <span>{{ text().hero.ctaServices }}</span>
+        </div>
+        <p>{{ text().hero.ctaServicesSub }}</p>
+      </a>
+
+      <a href="#contact" class="hero__card">
+        <div class="hero__card-heading">
+          <span class="hero__card-index">03</span>
+          <span>{{ text().hero.ctaContact }}</span>
+        </div>
+        <p>{{ text().hero.ctaContactSub }}</p>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+<header class="navbar" [class.navbar--scrolled]="isScrolled()">
+  <div class="container navbar__inner">
+    <a href="#home" class="navbar__logo" (click)="closeMenu()">
+      <img [src]="logo" alt="R & K Metal Pro" width="140" height="32" />
+    </a>
+
+    <nav class="navbar__links" [class.navbar__links--open]="isMenuOpen()">
+      <a href="#about" (click)="closeMenu()">{{ text().nav.about }}</a>
+      <a href="#projects" (click)="closeMenu()">{{ text().nav.projects }}</a>
+      <a href="#services" (click)="closeMenu()">{{ text().nav.services }}</a>
+      <a href="#contact" (click)="closeMenu()">{{ text().nav.contact }}</a>
+    </nav>
+
+    <div class="navbar__actions">
+      <div class="navbar__langs">
+        @for (l of languages; track l.code) {
+          <button
+            type="button"
+            [class.is-active]="i18n.lang() === l.code"
+            (click)="setLang(l.code)"
+          >{{ l.label }}</button>
+        }
+      </div>
+
+      <a href="#contact" class="btn btn--primary navbar__cta">{{ text().nav.contact }}</a>
+
+      <button
+        type="button"
+        class="navbar__burger"
+        [class.is-open]="isMenuOpen()"
+        (click)="toggleMenu()"
+        [attr.aria-label]="text().nav.menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
