@@ -109,13 +109,13 @@ export const UI_TEXT: Record<Lang, UiText> = {
       viewGallery: 'Galerie ansehen',
       moreImages: 'Weitere',
       filters: [
-        { key: 'all', label: 'Alle' },
-        { key: 'glass', label: 'Glasgeländer' },
-        { key: 'balcony', label: 'Balkongeländer' },
         { key: 'stairs', label: 'Treppengeländer' },
+        { key: 'cnc', label: 'CNC-Bearbeitung' },
+        { key: 'balcony', label: 'Balkongeländer' },
+        { key: 'glass', label: 'Glasgeländer' },
         { key: 'fencing', label: 'Zäune' },
         { key: 'doors', label: 'Türen' },
-        { key: 'cnc', label: 'CNC-Bearbeitung' }
+        { key: 'all', label: 'Alle' }
       ]
     },
     services: {
@@ -189,13 +189,13 @@ export const UI_TEXT: Record<Lang, UiText> = {
       viewGallery: 'View gallery',
       moreImages: 'More photos',
       filters: [
-        { key: 'all', label: 'All' },
-        { key: 'glass', label: 'Glass railings' },
-        { key: 'balcony', label: 'Balcony railings' },
         { key: 'stairs', label: 'Stair railings' },
+        { key: 'balcony', label: 'Balcony railings' },
+        { key: 'cnc', label: 'CNC machining' },
+        { key: 'glass', label: 'Glass railings' },
         { key: 'fencing', label: 'Fences' },
         { key: 'doors', label: 'Doors' },
-        { key: 'cnc', label: 'CNC machining' }
+        { key: 'all', label: 'All' }
       ]
     },
     services: {
@@ -269,13 +269,13 @@ export const UI_TEXT: Record<Lang, UiText> = {
       viewGallery: 'Pogledaj galeriju',
       moreImages: 'Vidi još',
       filters: [
-        { key: 'all', label: 'Sve' },
-        { key: 'glass', label: 'Staklene ograde' },
-        { key: 'balcony', label: 'Balkonske ograde' },
         { key: 'stairs', label: 'Stepenišne ograde' },
+        { key: 'balcony', label: 'Balkonske ograde' },
+        { key: 'glass', label: 'Staklene ograde' },
         { key: 'fencing', label: 'Dvorišne ograde' },
+        { key: 'cnc', label: 'CNC obrada' },
         { key: 'doors', label: 'Vrata' },
-        { key: 'cnc', label: 'CNC obrada' }
+        { key: 'all', label: 'Sve' }
       ]
     },
     services: {
