@@ -51,6 +51,21 @@
     animation: none;
     transform: none;
   }
+
+  .hero__stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .hero__stat {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero__stat-label {
+    max-width: 32ch;
+  }
 }
 
 .hero__scrim {
