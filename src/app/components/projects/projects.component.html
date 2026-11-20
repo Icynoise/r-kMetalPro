@@ -1,12 +1,13 @@
-<section id="projects" class="section projects">
+<section id="projects" class="section section--paper projects">
+  <span class="sheet-tag"><strong>03</strong>/06</span>
+
   <div class="container">
     <div class="section-head" appReveal>
-      <div class="eyebrow">{{ text().projects.eyebrow }}</div>
       <h2 class="h2">{{ text().projects.heading }}</h2>
       <p class="section-sub">{{ text().projects.subheading }}</p>
     </div>
 
-    <div class="projects__filters" appReveal="0.1s">
+    <div class="projects__filters" appReveal="0.06s">
       @for (filter of text().projects.filters; track filter.key) {
         <button
           type="button"
@@ -17,9 +18,9 @@
       }
     </div>
 
-    <div class="projects__grid">
-      @for (project of filteredProjects(); track project.slug; let i = $index) {
-        <article class="project-card" [appReveal]="(i % 3) * 0.08 + 's'" (click)="openProject(project)">
+    <div class="projects__grid" appReveal="0.1s">
+      @for (project of filteredProjects(); track project.slug) {
+        <article class="project-card chamfer-sm" (click)="openProject(project)">
           <div class="project-card__media">
             <img [src]="project.images[0].src" [alt]="project.images[0].alt | localize" loading="lazy" />
             @if (project.images.length > 1) {
@@ -33,7 +34,8 @@
             <h3>{{ project.title | localize }}</h3>
             <p>{{ project.description | localize }}</p>
             <div class="project-card__meta">
-              <span class="project-card__location"><app-icon name="pin" class="project-card__location-icon" /> {{ project.location | localize }}</span>
+              <app-icon name="pin" class="project-card__location-icon" />
+              <span class="project-card__location">{{ project.location | localize }}</span>
             </div>
             <div class="project-card__tags">
               @for (tag of project.tags | localizeList; track tag) {

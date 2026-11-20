@@ -29,9 +29,9 @@
   position: relative;
   width: min(1000px, 100%);
   max-height: 92vh;
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-lg);
+  background: var(--blueprint-950);
+  border: 1px solid var(--line-on-blueprint);
+  color: var(--white);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -110,7 +110,7 @@
 
 .lightbox__info-text p {
   margin-top: 10px;
-  color: var(--color-text-muted);
+  color: rgba(238, 243, 247, 0.7);
   font-size: 14.5px;
   max-width: 70ch;
 }
@@ -128,7 +128,8 @@
   align-items: center;
   gap: 6px;
   font-size: 13px;
-  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  color: rgba(238, 243, 247, 0.7);
 }
 
 .lightbox__thumbs {
@@ -160,7 +161,7 @@
 
 .lightbox__thumb.is-active {
   opacity: 1;
-  border-color: var(--color-accent);
+  border-color: var(--signal-500);
 }
 
 @media (max-width: 640px) {

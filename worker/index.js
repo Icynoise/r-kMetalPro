@@ -1,7 +1,5 @@
-// TEMP: sending to personal inbox until the rk-metalpro.com domain is verified with Resend.
-// Switch back to 'info@rk-metalpro.com' once verified.
-const TO_EMAIL = 'djordje.ramic@hotmail.com';
-const FROM_EMAIL = 'R & K Metal Pro Website <onboarding@resend.dev>';
+const TO_EMAIL = 'info@rk-metalpro.com';
+const FROM_EMAIL = 'R & K Metal Pro Website <no-reply@rk-metalpro.com>';
 
 function escapeHtml(value) {
   return String(value ?? '')

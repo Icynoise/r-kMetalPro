@@ -80,7 +80,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       eyebrow: 'R & K Metal Pro',
       heading: 'Ingenieurpräzision in jeder Konstruktion',
       subheading:
-        'Wir fertigen zuverlässige Zäune, Tore und Konstruktionen mit Fokus auf Funktionalität, Sicherheit und modernes Design.',
+        'Wir fertigen zuverlässige Zäune, Tore und Konstruktionen mit Fokus auf Funktionalität, Sicherheit und modernes Design. Jedes Projekt begleiten wir von der Idee bis zur Montage. Wir arbeiten schnell und präzise und garantieren die Qualität jedes Details.',
       ctaProjects: 'Unsere Projekte',
       ctaProjectsSub: 'Entdecken Sie unsere realisierten Projekte und sehen Sie, wie unsere Metalllösungen jeden Raum verbessern.',
       ctaServices: 'Unsere Dienstleistungen',
@@ -160,7 +160,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       eyebrow: 'R & K Metal Pro',
       heading: 'Engineering precision in every construction',
       subheading:
-        'We create reliable fences, gates, and custom-built structures with a focus on functionality, safety, and contemporary design.',
+        'We create reliable fences, gates, and custom-built structures with a focus on functionality, safety, and contemporary design. We follow every project from the first idea through to installation. We work quickly and precisely, backing every detail with a quality guarantee.',
       ctaProjects: 'Our Projects',
       ctaProjectsSub: 'Explore our completed projects and see how our metal solutions enhance every space.',
       ctaServices: 'Our Services',
@@ -240,7 +240,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       eyebrow: 'R & K Metal Pro',
       heading: 'Inženjerska preciznost u svakoj konstrukciji',
       subheading:
-        'Izrađujemo pouzdane ograde, kapije i konstrukcije po mjeri, sa fokusom na funkcionalnost, sigurnost i moderan dizajn.',
+        'Izrađujemo pouzdane ograde, kapije i konstrukcije po mjeri, sa fokusom na funkcionalnost, sigurnost i moderan dizajn. Svaki projekat pratimo od ideje do montaže. Radimo brzo, precizno i uz garanciju kvaliteta na svaki izvedeni detalj.',
       ctaProjects: 'Naši projekti',
       ctaProjectsSub: 'Pogledajte naše realizovane projekte i kako naša metalna rješenja unapređuju svaki prostor.',
       ctaServices: 'Naše usluge',
