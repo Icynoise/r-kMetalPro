@@ -22,7 +22,7 @@
       @for (project of filteredProjects(); track project.slug) {
         <article class="project-card chamfer-sm" (click)="openProject(project)">
           <div class="project-card__media">
-            <img [src]="project.images[0].src" [alt]="project.images[0].alt | localize" loading="lazy" />
+            <img [src]="project.images[0].src" [alt]="project.images[0].alt | localize" />
             @if (project.images.length > 1) {
               <span class="project-card__count">{{ text().projects.moreImages }} +{{ project.images.length - 1 }}</span>
             }
