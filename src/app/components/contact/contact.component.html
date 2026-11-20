@@ -1,8 +1,7 @@
-<section id="contact" class="section section--paper contact">
-  <span class="sheet-tag"><strong>05</strong>/06</span>
-
+<section id="contact" class="section contact">
   <div class="container contact__grid">
     <div class="contact__intro" appReveal>
+      <div class="eyebrow">{{ text().contact.eyebrow }}</div>
       <h2 class="h2">{{ text().contact.heading }}</h2>
       <p class="section-sub">{{ text().contact.subheading }}</p>
 
@@ -23,9 +22,7 @@
       </div>
     </div>
 
-    <form class="contact__form chamfer-sm" [formGroup]="form" (ngSubmit)="submit()" appReveal="0.08s" novalidate>
-      <span class="contact__form-tag">{{ text().contact.eyebrow }}</span>
-
+    <form class="contact__form" [formGroup]="form" (ngSubmit)="submit()" appReveal="0.1s" novalidate>
       <div class="contact__row">
         <div class="field">
           <label for="name">{{ text().contact.nameLabel }}</label>

@@ -4,9 +4,15 @@
   left: 0;
   right: 0;
   z-index: 200;
-  padding: 18px 0;
-  background: var(--blueprint-950);
-  border-bottom: 1px solid var(--line-on-blueprint);
+  padding: 22px 0;
+  transition: background 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar--scrolled {
+  padding: 14px 0;
+  background: rgba(10, 11, 13, 0.96);
+  border-bottom: 1px solid var(--color-line);
 }
 
 .navbar__inner {
@@ -25,22 +31,20 @@
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 40px;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 17px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  gap: 28px;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .navbar__links a {
   position: relative;
   display: inline-block;
-  padding-bottom: 6px;
-  color: var(--white);
+  padding-bottom: 4px;
+  color: var(--color-text);
   opacity: 0.85;
   white-space: nowrap;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  transition: opacity 0.25s ease, color 0.25s ease;
 }
 
 .navbar__links a::after {
@@ -50,15 +54,16 @@
   bottom: 0;
   width: 100%;
   height: 2px;
-  background: var(--signal-500);
+  border-radius: 2px;
+  background: var(--color-accent-strong);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.25s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar__links a:hover {
   opacity: 1;
-  color: var(--signal-500);
+  color: var(--color-accent-strong);
 }
 
 .navbar__links a:hover::after {
@@ -68,31 +73,35 @@
 .navbar__langs {
   display: flex;
   align-items: center;
-  gap: 2px;
-  font-family: var(--font-mono);
+  gap: 4px;
+  padding: 4px;
+  border-radius: 100px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
 }
 
 .navbar__langs button {
   border: none;
   background: transparent;
-  color: rgba(238, 243, 247, 0.5);
-  font-size: 14px;
+  color: var(--color-text-muted);
+  font-size: 13px;
   font-weight: 600;
-  padding: 7px 10px;
+  letter-spacing: 0.04em;
+  padding: 7px 11px;
+  border-radius: 100px;
   cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.navbar__langs button:not(:last-child) {
-  border-right: 1px solid var(--line-on-blueprint);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar__langs button:hover:not(.is-active) {
-  color: var(--white);
+  background: rgba(207, 159, 74, 0.16);
+  color: var(--color-accent-strong);
+  transform: translateY(-1px);
 }
 
 .navbar__langs button.is-active {
-  color: var(--signal-500);
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
 }
 
 .navbar__actions {
@@ -100,13 +109,12 @@
   z-index: 201;
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 18px;
 }
 
 .navbar__cta {
-  padding: 14px 30px;
-  font-size: 14.5px;
-  letter-spacing: 0.02em;
+  padding: 12px 24px;
+  font-size: 14px;
 }
 
 .navbar__burger {
@@ -114,19 +122,21 @@
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--line-on-blueprint);
-  background: transparent;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #22262c;
   cursor: pointer;
 }
 
 .navbar__burger span {
   display: block;
-  height: 2px;
-  width: 18px;
+  height: 2.5px;
+  width: 20px;
   margin: 0 auto;
-  background: var(--white);
+  border-radius: 2px;
+  background: #ffffff;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
@@ -146,7 +156,7 @@
   .navbar__backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(5, 12, 20, 0.6);
+    background: rgba(0, 0, 0, 0.55);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -163,17 +173,21 @@
     left: 0;
     right: 0;
     top: 0;
+    bottom: auto;
     width: 100%;
     max-height: 85vh;
-    background: var(--blueprint-950);
+    background: var(--color-bg-alt);
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 24px;
+    text-align: center;
+    gap: 22px;
     padding: 96px 32px 40px;
     transform: translateY(-100%);
-    transition: transform 0.3s ease;
-    border-bottom: 1px solid var(--line-on-blueprint);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    border-bottom: 1px solid var(--color-line);
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.6);
     font-size: 20px;
     overflow-y: auto;
     z-index: 150;

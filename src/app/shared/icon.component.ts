@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 
-export type IconName = 'pin' | 'phone' | 'mail' | 'calendar' | 'check-badge' | 'globe';
+export type IconName = 'pin' | 'phone' | 'mail';
 
 @Component({
   selector: 'app-icon',
@@ -22,25 +22,6 @@ export type IconName = 'pin' | 'phone' | 'mail' | 'calendar' | 'check-badge' | '
         <svg viewBox="0 0 24 24" fill="none">
           <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
           <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      }
-      @case ('calendar') {
-        <svg viewBox="0 0 24 24" fill="none">
-          <rect x="3.5" y="5.5" width="17" height="15" stroke="currentColor" stroke-width="1.8"/>
-          <path d="M3.5 10h17M8 3v4.5M16 3v4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
-      }
-      @case ('check-badge') {
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3.5 15 5h3v3l2.5 3-2.5 3v3h-3l-3 1.5L9 20.5H6v-3l-2.5-3L6 11.5v-3h3l3-1.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="m8.5 12.3 2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      }
-      @case ('globe') {
-        <svg viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/>
-          <ellipse cx="12" cy="12" rx="3.6" ry="8.5" stroke="currentColor" stroke-width="1.8"/>
-          <path d="M3.5 12h17" stroke="currentColor" stroke-width="1.8"/>
         </svg>
       }
     }

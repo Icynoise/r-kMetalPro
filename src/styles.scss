@@ -1,25 +1,27 @@
 :root {
-  --blueprint-950: #0a2740;
-  --blueprint-800: #123a5e;
-  --blueprint-700: #194a73;
-  --paper-50: #f2eee4;
-  --paper-100: #e9e3d4;
-  --ink-900: #0b1620;
-  --steel-400: #8793a1;
-  --steel-600: #596573;
-  --line-on-blueprint: rgba(230, 238, 245, 0.16);
-  --line-on-paper: rgba(11, 22, 32, 0.14);
-  --signal-500: #d8562e;
-  --signal-600: #b8451f;
-  --white: #eef3f7;
+  --color-bg: #0b0c0e;
+  --color-bg-alt: #131519;
+  --color-surface: #1b1e23;
+  --color-surface-2: #22262c;
+  --color-line: rgba(255, 255, 255, 0.09);
+  --color-text: #f4f5f6;
+  --color-text-muted: #a7adb6;
+  --color-light-bg: #f4f2ee;
+  --color-light-surface: #ffffff;
+  --color-light-text: #17181a;
+  --color-light-text-muted: #5c6068;
+  --color-light-line: rgba(17, 18, 20, 0.09);
+  --color-accent: #cf9f4a;
+  --color-accent-strong: #e6bd6d;
+  --color-accent-contrast: #14120a;
 
-  --font-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
-  --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
-  --font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+  --font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
 
-  --container-width: 1280px;
-  --chamfer: 18px;
-  --chamfer-sm: 10px;
+  --container-width: 1200px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-elevated: 0 30px 60px -30px rgba(0, 0, 0, 0.55);
 }
 
 * {
@@ -32,8 +34,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper-50);
-  color: var(--ink-900);
+  background: var(--color-bg);
+  color: var(--color-text);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -41,12 +43,10 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: var(--font-heading);
   margin: 0;
-  line-height: 0.98;
+  line-height: 1.12;
   letter-spacing: -0.01em;
-  text-transform: uppercase;
 }
 
 p {
@@ -67,151 +67,73 @@ button {
   font-family: inherit;
 }
 
-::selection {
-  background: var(--signal-500);
-  color: var(--white);
-}
-
 .container {
   width: 100%;
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 24px;
 }
 
 .section {
-  position: relative;
-  padding: 112px 0;
+  padding: 108px 0;
 }
 
 @media (max-width: 767px) {
   .section {
-    padding: 76px 0;
+    padding: 72px 0;
   }
 }
 
-/* "blueprint" = schematic / plan sections. "paper" = documentation / built sections. */
-.section--blueprint {
-  background: var(--blueprint-800);
-  color: var(--white);
-  background-image:
-    linear-gradient(var(--line-on-blueprint) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line-on-blueprint) 1px, transparent 1px);
-  background-size: 48px 48px;
-  background-position: -1px -1px;
-}
-
-.section--paper {
-  background: var(--paper-50);
-  color: var(--ink-900);
-}
-
-/* Match-line between two adjacent sections of the same background,
-   borrowed from the "continued on next sheet" convention of technical drawings. */
-.section-break {
-  position: relative;
-  background: var(--paper-50);
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: 18px 56px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.section-break__line {
-  flex: 1;
-  height: 1px;
-  background-image: repeating-linear-gradient(
-    to right,
-    var(--line-on-paper) 0,
-    var(--line-on-paper) 10px,
-    transparent 10px,
-    transparent 16px
-  );
-}
-
-.section-break__tick {
-  flex: 0 0 auto;
-  width: 1px;
-  height: 16px;
-  background: var(--line-on-paper);
-}
-
-@media (max-width: 640px) {
-  .section-break {
-    padding: 14px 24px;
-  }
-}
-
-/* Sheet number: small corner stamp standing in for the old "eyebrow" label.
-   Numbering is meaningful here — each section is one sheet in the drawing set. */
-.sheet-tag {
-  position: absolute;
-  top: 36px;
-  right: 28px;
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--steel-400);
-  white-space: nowrap;
-}
-
-.sheet-tag strong {
-  color: inherit;
-  font-weight: 600;
-}
-
-.section--blueprint .sheet-tag {
-  color: rgba(238, 243, 247, 0.55);
-}
-
-@media (max-width: 700px) {
-  .sheet-tag {
-    top: 20px;
-    right: 20px;
-    font-size: 11px;
-  }
+.section--light {
+  background: var(--color-light-bg);
+  color: var(--color-light-text);
 }
 
 .section-head {
-  max-width: 620px;
-  margin: 0 0 52px;
+  max-width: 640px;
+  margin: 0 0 56px;
+}
+
+.section-head--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 16px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 2px;
 }
 
 h2.h2 {
-  font-size: clamp(32px, 4.4vw, 52px);
+  font-size: clamp(28px, 4vw, 44px);
 }
 
 .section-sub {
-  margin-top: 18px;
+  margin-top: 16px;
+  color: var(--color-text-muted);
   font-size: 17px;
-  max-width: 50ch;
-  color: var(--steel-600);
-  text-transform: none;
+  max-width: 52ch;
 }
 
-.section--blueprint .section-sub {
-  color: rgba(238, 243, 247, 0.72);
-}
-
-/* Chamfer: a single cut corner, like a sheared steel plate. */
-.chamfer {
-  clip-path: polygon(
-    var(--chamfer) 0, 100% 0, 100% calc(100% - var(--chamfer)),
-    calc(100% - var(--chamfer)) 100%, 0 100%, 0 var(--chamfer)
-  );
-}
-
-.chamfer-sm {
-  clip-path: polygon(
-    var(--chamfer-sm) 0, 100% 0, 100% calc(100% - var(--chamfer-sm)),
-    calc(100% - var(--chamfer-sm)) 100%, 0 100%, 0 var(--chamfer-sm)
-  );
+.section--light .section-sub {
+  color: var(--color-light-text-muted);
 }
 
 .btn {
@@ -219,59 +141,60 @@ h2.h2 {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px 30px;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 15px;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
+  padding: 15px 28px;
+  border-radius: 100px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, background-position 0.45s ease, color 0.25s ease, border-color 0.25s ease;
   white-space: nowrap;
 }
 
-.btn:active {
-  transform: translateY(1px);
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 .btn--primary {
-  background: var(--signal-500);
-  color: var(--white);
-  border-color: var(--signal-500);
+  background: linear-gradient(135deg, var(--color-accent-strong), var(--color-accent));
+  color: var(--color-accent-contrast);
+  box-shadow: 0 16px 30px -14px rgba(207, 159, 74, 0.55);
 }
 
 .btn--primary:hover {
-  background: var(--signal-600);
-  border-color: var(--signal-600);
+  background: #565b63;
+  color: #ffffff;
+  box-shadow: 0 20px 38px -14px rgba(0, 0, 0, 0.5);
 }
 
 .btn--ghost {
   background: transparent;
-  border-color: var(--line-on-paper);
-  color: var(--ink-900);
+  border-color: var(--color-line);
+  color: var(--color-text);
 }
 
-.section--blueprint .btn--ghost {
-  border-color: var(--line-on-blueprint);
-  color: var(--white);
+.section--light .btn--ghost {
+  border-color: var(--color-light-line);
+  color: var(--color-light-text);
 }
 
 .btn--ghost:hover {
-  border-color: var(--signal-500);
-  color: var(--signal-500);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 .tag-pill {
   display: inline-flex;
   align-items: center;
-  padding: 5px 12px;
-  font-family: var(--font-mono);
-  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12.5px;
   font-weight: 500;
-  background: transparent;
-  color: var(--steel-600);
-  border: 1px solid var(--line-on-paper);
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-line);
 }
 
 .app-icon svg {
@@ -280,25 +203,16 @@ h2.h2 {
   display: block;
 }
 
-/* One coordinated settle on first paint, not a cascade of per-card fades. */
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
 }
 
 .visually-hidden {
@@ -310,69 +224,7 @@ h2.h2 {
   white-space: nowrap;
 }
 
-/* Registration crosshair — a reusable corner mark borrowed from print/CNC alignment marks. */
-.crosshair {
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-.crosshair::before,
-.crosshair::after {
-  content: '';
-  position: absolute;
-  background: currentColor;
-}
-
-.crosshair::before {
-  left: 50%;
-  top: 0;
-  width: 1px;
-  height: 100%;
-  transform: translateX(-50%);
-}
-
-.crosshair::after {
-  top: 50%;
-  left: 0;
-  height: 1px;
-  width: 100%;
-  transform: translateY(-50%);
-}
-
-/* Dimension line: a measurement device borrowed from technical drawings. */
-.dim-line {
-  position: relative;
-}
-
-.dim-line__track {
-  position: relative;
-  border-left: 1px solid currentColor;
-  opacity: 0.55;
-}
-
-.dim-line__track::before,
-.dim-line__track::after {
-  content: '';
-  position: absolute;
-  left: -5px;
-  width: 11px;
-  height: 1px;
-  background: currentColor;
-}
-
-.dim-line__track::before {
-  top: 0;
-}
-
-.dim-line__track::after {
-  bottom: 0;
-}
-
-.dim-line__label {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.02em;
+::selection {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
 }
