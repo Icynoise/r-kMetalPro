@@ -58,6 +58,7 @@ export interface UiText {
     errorBody: string;
     requiredError: string;
     emailError: string;
+    messageMinError: string;
   };
   footer: {
     tagline: string;
@@ -139,7 +140,8 @@ export const UI_TEXT: Record<Lang, UiText> = {
       successBody: 'Unser Team meldet sich bei Ihnen, nachdem wir Ihre Anfrage bearbeitet haben.',
       errorBody: 'Ups, etwas ist schiefgelaufen! Versuche es noch einmal.',
       requiredError: 'Dieses Feld ist erforderlich.',
-      emailError: 'Bitte geben Sie eine gültige Email-Adresse ein.'
+      emailError: 'Bitte geben Sie eine gültige Email-Adresse ein.',
+      messageMinError: 'Bitte geben Sie mindestens 10 Zeichen ein.'
     },
     footer: {
       tagline: 'Hochwertige Metallkonstruktionen für moderne Gebäude.',
@@ -219,7 +221,8 @@ export const UI_TEXT: Record<Lang, UiText> = {
       successBody: 'Our team will get back to you after reviewing your inquiry.',
       errorBody: 'Oops, something went wrong! Try again.',
       requiredError: 'This field is required.',
-      emailError: 'Please enter a valid email address.'
+      emailError: 'Please enter a valid email address.',
+      messageMinError: 'Please enter at least 10 characters.'
     },
     footer: {
       tagline: 'Quality metal structures for modern buildings.',
@@ -299,7 +302,8 @@ export const UI_TEXT: Record<Lang, UiText> = {
       successBody: 'Naš tim će vam se javiti nakon obrade vašeg upita.',
       errorBody: 'Ups, nešto je pošlo naopako! Pokušajte ponovo.',
       requiredError: 'Ovo polje je obavezno.',
-      emailError: 'Unesite ispravnu email adresu.'
+      emailError: 'Unesite ispravnu email adresu.',
+      messageMinError: 'Unesite najmanje 10 karaktera.'
     },
     footer: {
       tagline: 'Kvalitetne metalne konstrukcije za moderne objekte.',

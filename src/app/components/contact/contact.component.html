@@ -61,7 +61,7 @@
         <label for="message">{{ text().contact.messageLabel }}</label>
         <textarea id="message" rows="5" formControlName="message" [class.is-invalid]="f.message.invalid && f.message.touched"></textarea>
         @if (f.message.invalid && f.message.touched) {
-          <span class="field__error">{{ text().contact.requiredError }}</span>
+          <span class="field__error">{{ f.message.errors?.['minlength'] ? text().contact.messageMinError : text().contact.requiredError }}</span>
         }
       </div>
 
